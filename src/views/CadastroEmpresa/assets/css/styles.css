@@ -1,0 +1,44 @@
+#bg-cad-empresa {
+    background-image: url(../img/bg-cadastro-empresa.jpg);
+    background-size: cover;
+}
+
+#cad-img-empresa {
+    background-image: url(../img/cadastro-empresa.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#container-cadastro {
+    height: 100%;
+}
+
+#form-container {
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    border-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+#border-cadastro {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #f1f1f1;
+    border: none;
+    padding: 30px;
+}
+
+#border-cadastro input, #border-cadastro select, #border-cadastro textarea{
+    background-color: #f1f1f1;
+    border-radius: 12px;
+    color: #462F98;
+}
+
+
+#btn-form {
+    justify-content: end;
+    margin-top: 50px;
+}

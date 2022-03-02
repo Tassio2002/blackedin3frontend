@@ -1,0 +1,70 @@
+#bg-cad-profissional {
+    background-image: url(../img/bg-cadastro-profissional.jpg);
+    background-size: cover;
+}
+
+#cad-img-profissional {
+    background-image: url(../img/cadastro-profissional.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#container-profissional {
+    height: 850px;
+}
+
+#border-cadastro {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #f1f1f1;
+    border: none;
+    padding: 30px;
+}
+
+#border-cadastro input, #border-cadastro select, #border-cadastro textarea{
+    background-color: #f1f1f1;
+    border-radius: 12px;
+    color: #462F98;
+}
+
+#form-container {
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+    border-radius: 15px;
+}
+
+#border-profissional {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #f1f1f1;
+    border: none;
+}
+
+#btn-form {
+    justify-content: end;
+    margin-top: 20px;
+}
+
+textarea {
+    height: 100px;
+    max-height: 150px;
+}
+
+#btn-resetar {
+    font-size: 20px;
+    background-color: transparent;
+    color: #3DBCF2;
+    border: none;
+}
+
+#btn-cadastrar {
+    font-size: 20px;
+    background-color: #462F98;
+    color: #f1f1f1;
+    border: none;
+    border-radius: 12px;
+}

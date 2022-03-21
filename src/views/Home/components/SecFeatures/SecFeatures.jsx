@@ -1,70 +1,89 @@
+//Mudar funcionalidades para as empresas, adicionar diversificação do quadro de profissionais
 import React from 'react';
+
+import { BsFillGeoAltFill } from "react-icons/bs";
+import { BsFillHeartFill } from "react-icons/bs";
+import { BsBarChartFill } from "react-icons/bs";
+import { BsFillPeopleFill } from "react-icons/bs";
+import { BsHeart } from "react-icons/bs";
+import { BsTelephoneFill } from "react-icons/bs";
+
+import './assets/css/styles.css'
+import  {FeatureBox, FeatureBoxRed } from './Components/FeatureBox';
 
 const SecFeatures = () => {
     return (
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center">Funcionalidades</h2>
-                <p class="text-center">Trouxemos algumas funcionalidades já conhecidas em redes de relacionamentos, mas que ganharam um novo propósito aqui no BlackedIn.</p>
-                <h2 class="text-center">Profissionais</h2>
-            </div>
-            <div class="row justify-content-center features">
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box">
-                        <i class="bi bi-geo-alt-fill icon"></i>
-                        <h3 class="name">Busca por localidade</h3>
-                        <p class="description">Faça buscas personalizadas por empresas na sua região ou ainda aplique para trabalhos remotos.</p>
-                        <a class="learn-more" href="*">saiba mais »</a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box">
-                        <i class="bi bi-heart-fill icon"></i>
-                        <h3 class="name">Sistema de match</h3>
-                        <p class="description">A plataforma traz a inovação do sistema de match entre os profissionais e as empresas. Aproximando os contratantes e contratados</p>
-                        <a class="learn-more" href="*">saiba mais »</a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box">
-                        <i class="bi bi-bar-chart-fill icon"></i>
-                        <h3 class="name">Aprimore-se</h3>
-                        <p class="description">Conheça também nossa gama de cursos profissionalizantes com certificado, melhore tanto suas hard-skills como suas soft-skills.</p>
-                        <a class="learn-more" href="*">saiba mais »</a>
+        <section className="features">
+            <div className="container">
+
+                <div className="d-flex justify-content-center">
+                    <div className="title w-50 p-3 mt-4 d-flex justify-content-center flex-column">
+                        <h2 className="font-weight-bold pb-3">Funcionalidades</h2>
+                        <p className="p-color">
+                            Trouxemos algumas funcionalidades já conhecidas em redes de relacionamentos,
+                            mas que ganharam um novo propósito aqui no BlackedIn.
+                        </p>
                     </div>
                 </div>
 
+                <h2 className="text-center font-weight-bold pb-5">Profissionais</h2>
 
-                <h2 class="text-center">Empresas</h2>
+                <div className="row">
+                    <div className="col">
+                        <FeatureBox
+                            icon={<BsFillGeoAltFill />}
+                            boxTitle="Busca por localidade"
+                            desc="Faça buscas personalizadas por empresas na sua região ou ainda aplique para trabalhos remotos."
+                        />
+                    </div>
+
+                    <div className="col">
+                        <FeatureBox
+                            icon={<BsFillHeartFill />}
+                            boxTitle="Sistema de match"
+                            desc="A plataforma traz a inovação do sistema de match entre os profissionais e as empresas. Aproximando os contratantes e contratados"
+                        />
+                    </div>
+
+                    <div className="col">
+                        <FeatureBox
+                            icon={<BsBarChartFill />}
+                            boxTitle="Aprimore-se"
+                            desc="Conheça também nossa gama de cursos profissionalizantes com certificado, melhore tanto suas hard-skills como suas soft-skills."
+                        />
+                    </div>
+                </div>
+
+                <h2 className="text-center font-weight-bold py-5">Empresas</h2>
+
+                <div className="row ">
+                    <div className="col">
+                        <FeatureBoxRed
+                            icon={<BsFillPeopleFill />}
+                            boxTitle="Banco de talentos"
+                            desc="Realize buscas personalizadas em nosso bancos de talentos que estão esperando para fazer a diferença na sua empresa."
+                        />
+                    </div>
+
+                    <div className="col">
+                        <FeatureBoxRed
+                            icon={<BsHeart />}
+                            boxTitle="Sistema de match"
+                            desc="Ache o profissional ideal pra sua vaga! Experimente nosso sistema de match que coloca sua empresa diretamente em contato com os profissionais da sua escolha."
+                        />
+                    </div>
+
+                    <div className="col">
+                        <FeatureBoxRed
+                            icon={<BsTelephoneFill />}
+                            boxTitle="Suporte 24/7"
+                            desc="Temos suporte 24 horas por dia, 7 dias na semana, contate-nos sempre que precisar de algo."
+                        />
+                    </div>
+                </div>
 
             </div>
-            <div class="row justify-content-center features">
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box">
-                        <i class='bi bi-people-fill icon-2'></i>
-                        <h3 class="name">Banco de talentos</h3>
-                        <p class="description">Realize buscas personalizadas em nosso bancos de talentos que estão esperando para fazer a diferença na sua empresa.</p>
-                        <a class="learn-more" href="*">saiba mais »</a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box">
-                        <i class="bi bi-heart-fill icon-2"></i>
-                        <h3 class="name">Sistema de match</h3>
-                        <p class="description">Ache o profissional ideal pra sua vaga! Experimente nosso sistema de match que coloca sua empresa diretamente em contato com os profissionais da sua escolha.</p>
-                        <a class="learn-more" href="*">saiba mais »</a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box">
-                        <i class="bi bi-telephone-fill icon-2"></i>
-                        <h3 class="name">Suporte 24/7</h3>
-                        <p class="description">Temos suporte 24 horas por dia, 7 dias na semana, contate-nos sempre que precisar de algo.</p>
-                        <a class="learn-more" href="*">saiba mais»</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
     );
 }
 

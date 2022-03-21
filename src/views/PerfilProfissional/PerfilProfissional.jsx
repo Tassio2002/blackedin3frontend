@@ -1,12 +1,26 @@
 import React from 'react';
-import Header from './components/Header';
+import Perfil from './components/Perfil';
+import PerfilData from './components/PerfilData';
+import './assets/css/styles.css'
 
-const HomePage = () => {
+const PerfilProfissional = () => {
     return ( 
         <div>
-            <Header />         
+
+            <div class="pag-perfil">
+                 <div class="card-perfil">
+                    <div class="container-fluid container-dados-perfil">
+                    <div class="row">
+                        <Perfil />
+                        <PerfilData />  
+                    </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
      );
 }
  
-export default HomePage;
+export default PerfilProfissional;
+

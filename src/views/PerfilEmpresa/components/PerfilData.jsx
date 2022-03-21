@@ -1,10 +1,9 @@
 import React from 'react';
 
 const PerfilData = () => {
-    return ( 
-        <div>
-
-            <div class="col-sm p-4">
+    return (
+        <>
+            <div class="col-sm p-4 perfil-data">
                     <h6>Nome da Empresa </h6>
                     <p id="nome_empresa">Itau</p>
             
@@ -22,7 +21,7 @@ const PerfilData = () => {
     
             </div>
 
-            <div class="col-sm p-4">
+            <div class="col-sm p-4 perfil-data">
 
                 <h6>Porte da Empresa </h6>
                 <p id="porte_empresa">Grande</p>
@@ -38,9 +37,10 @@ const PerfilData = () => {
           
             </div>
 
-        </div>
-
+        </>
     );
 }
 
 export default PerfilData;
+
+

@@ -73,3 +73,17 @@
 .article-img {
   width: 100%;
 }
+
+.icon {
+  font-size: 60px;
+  color: #462F98;
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+
+.icon-red {
+  font-size: 60px;
+  color: red;
+  margin-top: 20px;
+  margin-bottom: 35px;
+}

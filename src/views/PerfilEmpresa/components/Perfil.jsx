@@ -1,18 +1,14 @@
-/*
-NÃO CONSEGUE IMPORTAR A IMAGEM
-*/
-
 import React from 'react';
-//import img from './assets/img/itau.png';
-//import ImgEmpresa from './assets/img/itau.jpg'
+import ImgEmpresa from '../assets/img/itau.png';
 
 const Perfil = () => {
     return ( 
-                    <div class="row">
+        <>
+
                         <div class="col-sm p-4">
                             <div id="cor-perfil-empresa" class="container-fluid p-2 text-center head-perfil">
 
-                                {/*<img  src={ImgEmpresa} alt="Foto Perfil Empresa"/>*/}
+                                <img  src={ImgEmpresa} alt="Foto Perfil Empresa"/>
                                 <h1 id="nome_empresa">Itau</h1>
                                 <p>Perfil da Empresa</p> 
                                 <a href="#editar">
@@ -30,8 +26,8 @@ const Perfil = () => {
                             </div>
                         </div>
                        
-                    </div>
-
+                   
+        </>
      );
 }
  

@@ -16,10 +16,6 @@
     height: 100%;
   }
 
-  #cor-perfil-profissional {
-    background-color: #462F98;
-  }
-
   #cor-perfil-empresa {
     background-color: #D25E2C;
   }
@@ -48,6 +44,10 @@
       border: 1.5px solid #ddd;
       border-radius: 12px;
   }
+.perfil-data {
+  text-align: left;
+}
+
 .btn-perfil-editar {
     padding: 10px 20px;
     width: 100%;

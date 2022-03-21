@@ -6,11 +6,14 @@ import './assets/css/styles.css'
 const PerfilEmpresa = () => {
     return ( 
         <div>
+
             <div class="pag-perfil">
                  <div class="card-perfil">
                     <div class="container-fluid container-dados-perfil">
+                    <div class="row">
                         <Perfil />
                         <PerfilData />  
+                    </div>
                     </div>
                 </div>
             </div>

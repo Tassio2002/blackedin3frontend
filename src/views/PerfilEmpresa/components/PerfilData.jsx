@@ -1,42 +1,113 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import empresaService from '../../../services/empresa.service';
+import vagaService from '../../../services/vaga.service';
+
+
 
 const PerfilData = () => {
+
+    //Recebe as empresas
+    const [empresas, setEmpresas] = useState([]);
+
+    useEffect(() => {
+        empresaService.getAll()
+            .then(response => {
+                console.log('mostrando as empresas', response.data);
+                setEmpresas(response.data);
+            })
+            .catch(error => {
+                console.log('erro', error);
+            })
+    }, [])
+
+    //Recebe as vagas
+    const [vagas, setVagas] = useState([]);
+
+    useEffect(() => {
+        vagaService.getAll()
+            .then(response => {
+                console.log('mostrando as vagas', response.data);
+                setVagas(response.data);
+            })
+            .catch(error => {
+                console.log('erro', error);
+            })
+    }, [])
+
+    //deleta vagas
+    const handleDelete = (id) => {
+        console.log('imprimindo id', id);
+        vagaService.remove(id)
+            .then(response => {
+                alert('Empresa deletado', response.data);
+                window.location.reload();
+            })
+            .catch(error => {
+                console.log('Algo deu errado', error);
+            })
+    }
+
     return (
         <>
-            <div class="col-sm p-4 perfil-data">
-                    <h6>Nome da Empresa </h6>
-                    <p id="nome_empresa">Itau</p>
-            
-                    <h6>CNPJ </h6>
-                    <p id="CNPJ">112222345/09765</p>
-            
-                    <h6>Email </h6>
-                    <p id="email_empresa">empresa@itau.com</p>
+            {empresas.map(empresa => (
+                <div className="d-flex flex-wrap">
+                    <div className="col-sm p-4 perfil-data" key={empresa.id}>
+                        <h6>Nome da Empresa</h6>
+                        <p id="nome_empresa">{empresa.nome_empresa}</p>
 
-                    <h6>Senha </h6>
-                    <p id="senha">**********</p>
-            
-                    <h6>Razão Social </h6>
-                    <p id="razão_social">Itau S.A</p>
-    
-            </div>
+                        <h6>CNPJ</h6>
+                        <p id="CNPJ">{empresa.cnpj}</p>
 
-            <div class="col-sm p-4 perfil-data">
+                        <h6>Email</h6>
+                        <p id="email_empresa">{empresa.email}</p>
 
-                <h6>Porte da Empresa </h6>
-                <p id="porte_empresa">Grande</p>
-          
-                <h6>Área de Atuação </h6>
-                <p id="area_atuacao">Tecnologia</p>
+                        <h6>Razão Social</h6>
+                        <p id="razão_social">{empresa.razao_social}</p>
 
-                <h6>Modelo de Trabalho </h6>
-                <p id="modelo_trabalho">Hibrido</p>
-          
-                <h6>Descrição </h6>
-                <p id="descricao">Itaú Unibanco, também conhecido como Itaú, é o maior banco brasileiro, com sede na cidade de São Paulo, no estado homônimo.</p>
-          
-            </div>
+                        <h6>Porte da Empresa</h6>
+                        <p id="porte_empresa">{empresa.porte}</p>
 
+                        <h6>Área de Atuação</h6>
+                        <p id="area_atuacao">{empresa.area_atuacao}</p>
+
+                        <h6>Modelo de Trabalho</h6>
+                        <p id="modelo_trabalho">{empresa.razao_social}</p>
+
+
+                    </div>
+                    <div className="col-sm p-4 perfil-data">
+                        <h6>Descrição</h6>
+                        <p id="descricao">{empresa.descricao}</p>
+                    </div>
+                </div>
+
+            ))
+
+            }
+            {vagas.map(vaga => (
+                <div className="d-flex flex-wrap">
+                    <div className="col-sm p-4 perfil-data" key={vaga.id}>
+                        <h6>Titulo da vaga</h6>
+                        <p id="nome_empresa">{vaga.titulo_vaga}</p>
+                        <h6>Descrição</h6>
+                        <p id="nome_empresa">{vaga.descricao_vaga}</p>
+                        <h6>Salário</h6>
+                        <p id="nome_empresa">{`R$${vaga.salario}.00`}</p>
+                        <h6>Contrato</h6>
+                        <p id="nome_empresa">{vaga.contrato}</p>
+                    </div>
+                    <div className="vagas-btn">
+                        <Link className="btn-perfil-editar" to={`/vagas/edit/${vagas.id}`}>Editar empresa</Link>
+                        {/*ajustar botão de delete*/}
+                        <a href="#deletar">
+                            <button className="btn-perfil-deletar" onClick={() => {
+                                handleDelete(vaga.id);
+                            }}>Deletar</button>
+                        </a>
+                    </div>
+                </div>
+            ))}
         </>
     );
 }

@@ -48,6 +48,15 @@
   text-align: left;
 }
 
+.perfil-data h6 {
+  font-weight: 800;
+}
+
+.buttons{
+  width: 100%;
+  max-width: 250px;
+}
+
 .btn-perfil-editar {
     padding: 10px 20px;
     width: 100%;
@@ -82,4 +91,14 @@
     width: 100%;
     background-color: transparent;
     margin: 60px 0 20px 0;
+}
+
+@media screen and (max-width: 500px){
+  .perfil-data h6 {
+    text-align: center;
+  }
+
+  .perfil-data p {
+    text-align: center;
+  }
 }

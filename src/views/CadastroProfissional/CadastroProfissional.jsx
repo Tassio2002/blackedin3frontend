@@ -1,12 +1,11 @@
-/*Verificar o css da classe form-control*/
 import React from 'react';
 
 import './assets/css/styles.css'
-import Form from './components/Form';
+import FormProfissional from './components/FormProfissional';
 const CadastroProfissional = () => {
     return ( 
         <div>
-            <Form />     
+            <FormProfissional />     
         </div>
      );
 }

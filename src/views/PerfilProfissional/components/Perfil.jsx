@@ -1,34 +1,64 @@
 import React from 'react';
-import ImgProfissional from '../assets/img/1.jpg';
+import { useEffect, useState } from 'react';
+import profissionalService from '../../../services/profissional.service';
+import { Link } from 'react-router-dom';
+
+import ImgProfissional from '../assets/img/img-prof.png';
 
 const Perfil = () => {
-    return ( 
+
+    const [profissionais, setProfissionais] = useState([]);
+
+
+    useEffect(() => {
+        profissionalService.getAll()
+            .then(response => {
+                console.log('mostrando os profissionais', response.data);
+                setProfissionais(response.data);
+            })
+            .catch(error => {
+                console.log('erro', error);
+            })
+    }, [])
+
+    const handleDelete = (id) => {
+        console.log('imprimindo id', id);
+        profissionalService.remove(id)
+            .then(response => {
+                alert('Perfil deletado', response.data);
+                window.location.reload();
+            })
+            .catch(error => {
+                console.log('Algo deu errado', error);
+            })
+    }
+
+    return (
         <>
-
+            {profissionais.map(profissional => (
                 <div class="col-sm p-4">
-                    <div id="cor-perfil-profissional" class="container-fluid p-2 text-center head-perfil">
-                        {/*<img src={ImgProfissional} alt="Foto Perfil Profissional" />*/}
-                        <h1 id="nome">Nathália Sobrenome</h1>
-                        <p>Perfil do Profissional</p> 
-                        <a href="#editar">
-                            <button class="btn-perfil-editar">Editar perfil</button>
-                        </a>
-
-                        <a href="#lista">
-                            <button class="btn-perfil-lista">Ver dados em lista</button>
-                        </a>
-
+                    <div key={profissional.id} id="cor-perfil-profissional" class="container-fluid p-2 text-center head-perfil">
+                        <img src={ImgProfissional} alt="Foto Perfil Profissional" />
+                        <h1 id="nome">{profissional.nome}</h1>
+                        <Link
+                            className="btn-perfil-editar"
+                            to={`/profissionais/edit/${profissional.id}`}>
+                            Editar perfil
+                        </Link>
                         <a href="#deletar">
-                            <button class="btn-perfil-deletar">Deletar conta</button>
+                            <button className="btn-perfil-deletar" onClick={() => {
+                                handleDelete(profissional.id);
+                            }}
+                            >
+                                Deletar
+                            </button>
                         </a>
-
-
-                      </div>
+                    </div>
                 </div>
-                       
-                   
+            ))
+            }
         </>
-     );
+    );
 }
- 
+
 export default Perfil;

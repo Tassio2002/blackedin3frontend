@@ -1,10 +1,10 @@
-#bg-cad-empresa {
-    background-image: url(../img/bg-cadastro-empresa.jpg);
+#bg-cad-vaga {
+    background-image: url(../img/vagas-img2.png);
     background-size: cover;
 }
 
-#cad-img-empresa {
-    background-image: url(../img/cadastro-empresa.jpg);
+#cad-img-vaga {
+    background-image: url(../img/vagas-img1.png);
     background-size: cover;
     background-repeat: no-repeat;
     border-top-left-radius: 15px;

@@ -1,10 +1,10 @@
-#bg-cad-profissional {
-    background-image: url(../img/bg-cadastro-profissional.jpg);
+#bg-cad-curriculo {
+    background-image: url(../img/curriculo1.png);
     background-size: cover;
 }
 
-#cad-img-profissional {
-    background-image: url(../img/cadastro-profissional.jpg);
+#cad-img-curriculo {
+    background-image: url(../img/curriculo2.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -93,7 +93,3 @@ label {
     text-align: left;
     display: block;
 }
-
-
-
-

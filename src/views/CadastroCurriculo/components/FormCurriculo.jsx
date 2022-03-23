@@ -4,17 +4,19 @@ import { useNavigate, useParams } from 'react-router-dom';
 import curriculoService from '../../../services/curriculo.service';
 
 const FormCurriculo = () => {
-    const [nome, setNome] = useState('');
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
-    const [data_nascimento, setData_nascimento] = useState('');
+    const [cep, setCep] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [escolaridade, setEscolaridade] = useState('');
+    const [area_interesse, setArea_interesse] = useState('');
+    const [experiencia, setExperiencia] = useState('');
+    const [competencias, setCompetencias] = useState('');
     const navigate = useNavigate();
     const { id } = useParams();
 
     const saveCurriculo = (c) => {
         c.preventDefault();
 
-        const curriculo = { nome, email, senha, data_nascimento, id };
+        const curriculo = { cep, telefone, escolaridade, area_interesse, experiencia, competencias, id };
         if (id) {
             //update
             curriculoService.update(curriculo)
@@ -44,10 +46,12 @@ const FormCurriculo = () => {
         if (id) {
             curriculoService.get(id)
                 .then(curriculo => {
-                    setNome(curriculo.data.nome);
-                    setEmail(curriculo.data.email);
-                    setSenha(curriculo.data.senha);
-                    setData_nascimento(curriculo.data.data_nascimento);
+                    setCep(curriculo.data.cep);
+                    setTelefone(curriculo.data.telefone);
+                    setEscolaridade(curriculo.data.escolaridade);
+                    setArea_interesse(curriculo.data.area_interesse);
+                    setExperiencia(curriculo.data.experiencia);
+                    setCompetencias(curriculo.data.competencias);
                 })
                 .catch(error => {
                     console.log('Algo deu errado', error);
@@ -62,47 +66,66 @@ const FormCurriculo = () => {
                     <div id="cad-img-curriculo" className="col-md-6"></div>
                     <div id="border-cadastro" className="col d-flex flex-column justify-content-justify">
                         <form>
-                            <h2>Cadastro curriculo</h2>
+                            <h2>Cadastro Currículo</h2>
 
-                            <label>E</label>
+                            <label>Endereço</label>
                             <input
                                 type="text"
                                 className="form-control"
-                                id="nome"
-                                value={nome}
-                                onChange={(c) => setNome(c.target.value)}
+                                id="cep"
+                                value={cep}
+                                onChange={(c) => setCep(c.target.value)}
                                 required
                             />
 
-                            <label>Email</label>
+                            <label>Telefone com DDD</label>
                             <input
-                                type="email"
+                                type="number"
                                 className="form-control"
-                                id="email"
-                                value={email}
-                                onChange={(c) => setEmail(c.target.value)}
+                                id="telefone"
+                                minlength="11"
+                                value={telefone}
+                                onChange={(c) => setTelefone(c.target.value)}
                                 required
                             />
 
-                            <label>Senha (min. 8 caracteres)</label>
+                            <label>Escolaridade</label>
                             <input
-                                type="password"
+                                type="text"
                                 className="form-control"
-                                id="senha"
-                                minlength="8"
-                                autocomplete="current-password"
-                                value={senha}
-                                onChange={(c) => setSenha(c.target.value)}
+                                id="escolaridade"
+                                value={escolaridade}
+                                onChange={(c) => setEscolaridade(c.target.value)}
                                 required
                             />
 
-                            <label>Data de nascimento</label>
+                            <label>Área de interesse</label>
                             <input
-                                type="date"
+                                type="text"
                                 className="form-control"
-                                id="dataNascimento"
-                                value={data_nascimento}
-                                onChange={(c) => setData_nascimento(c.target.value)}
+                                id="area_interesse"
+                                value={area_interesse}
+                                onChange={(c) => setArea_interesse(c.target.value)}
+                                required
+                            />
+
+                            <label>Experiência</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="experiencia"
+                                value={experiencia}
+                                onChange={(c) => setExperiencia(c.target.value)}
+                                required
+                            />
+
+                            <label>Competências</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="competencias"
+                                value={competencias}
+                                onChange={(c) => setCompetencias(c.target.value)}
                                 required
                             />
 

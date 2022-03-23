@@ -99,12 +99,10 @@ const PerfilData = () => {
                     </div>
                     <div className="vagas-btn">
                         <Link className="btn-perfil-editar" to={`/vagas/edit/${vagas.id}`}>Editar empresa</Link>
-                        {/*ajustar botão de delete*/}
-                        <a href="#deletar">
-                            <button className="btn-perfil-deletar" onClick={() => {
-                                handleDelete(vaga.id);
-                            }}>Deletar</button>
-                        </a>
+                        <button className="btn-vaga-deletar mt-4" onClick={() => {
+                            handleDelete(vaga.id);
+                        }}>Deletar</button>
+
                     </div>
                 </div>
             ))}

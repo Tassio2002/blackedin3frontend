@@ -70,6 +70,20 @@
     transition: .2s;
 }
 
+.btn-vaga-deletar {
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 150px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgb(180, 38, 38);
+  border-radius: 12px;
+  margin: 10px 0 10px 0;
+  border: none;
+  transition: .2s;
+}
+
 .btn-perfil-editar:hover {
     opacity: 0.8;
 }
